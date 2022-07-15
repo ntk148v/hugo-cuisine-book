@@ -7,7 +7,7 @@
     <a class="navbar-item" href="/">
       {{ with $.Site.Params.Logo }}
       <figure class="image is-48x48 navbar-item">
-        <img class="is-rounded" src="{{ . }}" alt="{{ . }}" />
+        <img class="is-rounded" src="{{ $.Site.BaseURL }}/{{ . }}" alt="{{ . }}" />
       </figure>
       {{ end }}
       <b>{{ $.Site.Title }}</b>
