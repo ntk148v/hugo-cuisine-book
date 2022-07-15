@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
 @import url("https://ntk148v.github.io/iosevkawebfont/latest/iosevka.css");
 
 body {
-  font-family: "Iosevka Web";
+  font-family: "Amatic SC", cursive;
+  font-size: larger;
 }
 
-code {
+.tag {
   font-family: "Iosevka Web", monospace;
+  font-size: medium;
 }
