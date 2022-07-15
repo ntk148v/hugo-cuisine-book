@@ -26,7 +26,7 @@ Credits:
 
 ## 1. Requirements
 
-- Hugo 0.68 or higher
+- Hugo extended version.
 
 ## 2. Installation
 
