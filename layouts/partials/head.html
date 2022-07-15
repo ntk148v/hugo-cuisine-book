@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{
+    end }}{{ end }}
+  </title>
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  <meta name="description" content="{{ .Site.Params.description }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/css/bulma.min.css" />
+  <!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
+  {{- $styles := resources.Get "main.scss" | resources.ExecuteAsTemplate
+  "main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" {{ template
+  "integrity" $styles }}> {{- define "integrity" -}} {{- if (urls.Parse
+  .Permalink).Host -}} integrity="{{ .Data.Integrity }}" crossorigin="anonymous"
+  {{- end -}} {{- end -}}
+  {{- $searchJSFile := printf "%s.search.js" .Language.Lang }}
+  {{- $searchJS := resources.Get "search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Minify | resources.Fingerprint }}
+  <script defer src="/js/flexsearch.min.js"></script>
+  <script defer src="{{ $searchJS.RelPermalink }}" {{ template "integrity" $searchJS }}></script>
+</head>
