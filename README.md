@@ -19,6 +19,11 @@
 	- [2.1. Install as git module](#21-install-as-git-module)
 	- [2.2. Install as hugo module](#22-install-as-hugo-module)
 
+Credits:
+
+- Highly inspired by [Recipe-Book](https://github.com/rametta/recipe-book)
+- Images from [Freepik](https://freepik.com/)
+
 ## 1. Requirements
 
 - Hugo 0.68 or higher
