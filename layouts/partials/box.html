@@ -11,9 +11,8 @@
     </div>
   </div>
   <div style="margin-top: 0.5em;">
-    <span class="tag is-primary is-light">{{ .Params.Location }}</span>
     {{ range .Params.Tags }}
-    <span class="tag">{{ . }}</span>
+    <span class="tag is-primary is-light">{{ . }}</span>
     {{ end }}
   </div>
 </a>

@@ -1,10 +1,10 @@
 <nav
-  class="navbar is-light is-fixed-top"
+  class="navbar is-transparent is-fixed-top"
   role="navigation"
   aria-label="main navigation"
 >
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href="{{ $.Site.BaseURL }}">
       {{ with $.Site.Params.Logo }}
       <figure class="image is-48x48 navbar-item">
         <img class="is-rounded" src="{{ $.Site.BaseURL }}/{{ . }}" alt="{{ . }}" />

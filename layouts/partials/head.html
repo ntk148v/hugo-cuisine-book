@@ -1,3 +1,4 @@
+{{ $baseUrl := .Site.BaseURL }} 
 <head>
   <meta charset="utf-8" />
   <title>
@@ -7,11 +8,11 @@
   <meta name="author" content="{{ .Site.Params.author }}" />
   <meta name="description" content="{{ .Site.Params.description }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="/css/bulma.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $baseUrl }}/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $baseUrl }}/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ $baseUrl }}/favicon-16x16.png" />
+  <link rel="manifest" href="{{ $baseUrl }}/site.webmanifest" />
+  <link rel="stylesheet" href="{{ $baseUrl }}/css/bulma.min.css" />
   <!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
   {{- $styles := resources.Get "main.scss" | resources.ExecuteAsTemplate
   "main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}

@@ -8,7 +8,7 @@
       <div class="column">
         <div style="margin-bottom: 1em;">
           {{ range .Site.Taxonomies.tags }}
-          <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          <a class="tag is-primary is-light" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
           {{ end }}
         </div>
       </div>

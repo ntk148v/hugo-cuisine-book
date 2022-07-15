@@ -1,32 +1,27 @@
-{{ define "main" }}
+{{ define "main" }} {{ $baseUrl := .Site.BaseURL }}
 <div class="section">
   <article class="container box">
     <header>
       <div class="is-flex">
         {{ with .Params.featured_image }}
-        <figure class="image is-96x96" style="margin-right: 0.5em;">
+        <figure class="image is-96x96" style="margin-right: 0.5em">
           <img alt="{{ . }}" class="is-rounded" src="{{ . }}" />
         </figure>
         {{ end }}
         <div>
-          <h1 class="title is-1">
-            {{ .Title }}
-          </h1>
-          <h6 class="subtitle is-6">
-            {{ .Summary }}
-          </h6>
+          <h1 class="title is-1">{{ .Title }}</h1>
+          <h6 class="subtitle is-6">{{ .Summary }}</h6>
         </div>
       </div>
-      <div style="margin-top: 1em;">
-        <span class="tag is-primary is-light">{{ .Params.Location }}</span>
+      <div style="margin-top: 1em">
         {{ range .Params.Tags }}
-        <a class="tag" href="/tags/{{ . }}">{{ . }}</a>
+        <a class="tag is-primary is-light" href="{{ $baseUrl }}/tags/{{ . }}"
+          >{{ . }}</a
+        >
         {{ end }}
       </div>
     </header>
-    <div class="content" style="margin-top: 1em;">
-      {{ .Content }}
-    </div>
+    <div class="content" style="margin-top: 1em">{{ .Content }}</div>
     {{- partial "comments.html" -}}
   </article>
 </div>
