@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  // use this if navbar is fixed
+  min-height: calc(100vh - 52px);
+  flex-direction: column;
+  background-image: url("36129.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+footer {
+  padding: 2rem 1rem 2rem !important;
+}
