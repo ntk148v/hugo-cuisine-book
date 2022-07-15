@@ -11,7 +11,13 @@
         <a href="https://gohugo.io">
             <img alt="Hugo" src="https://img.shields.io/badge/hugo-0.68-blue.svg?style=for-the-badge">
         </a>
+        <a href="https://ntk148v.github.io/mammam">
+            <img alt="Demo Site" src="https://img.shields.io/badge/demo-site-green.svg?style=for-the-badge">
+        </a>
 	</p><br>
+    <p>
+        <img src="./screenshot.png">
+    </p>
 </div>
 
 - [1. Requirements](#1-requirements)
