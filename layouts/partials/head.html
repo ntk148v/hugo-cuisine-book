@@ -22,6 +22,6 @@
   {{- end -}} {{- end -}}
   {{- $searchJSFile := printf "%s.search.js" .Language.Lang }}
   {{- $searchJS := resources.Get "search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Minify | resources.Fingerprint }}
-  <script defer src="/js/flexsearch.min.js"></script>
+  <script defer src="{{ $baseUrl }}/js/flexsearch.min.js"></script>
   <script defer src="{{ $searchJS.RelPermalink }}" {{ template "integrity" $searchJS }}></script>
 </head>
