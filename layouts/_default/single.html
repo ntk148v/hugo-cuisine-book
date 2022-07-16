@@ -3,9 +3,13 @@
   <article class="container box">
     <header>
       <div class="is-flex">
-        {{ with .Params.featured_image }}
-        <figure class="image is-96x96" style="margin-right: 0.5em">
-          <img alt="{{ . }}" class="is-rounded" src="{{ . }}" />
+        {{ if .Params.featured_image }}
+        <figure class="image is-96x96" style="margin-right: 0.5em;">
+        {{ with .Resources.GetMatch .Params.featured_image }}
+          <img alt="{{ .Name }}" class="is-rounded" src="{{ .Permalink }}" />
+        {{ else }}
+          <img alt="{{ .Params.featured_image }}" class="is-rounded" src="{{ .Params.featured_image | relURL }}" />
+        {{ end }}
         </figure>
         {{ end }}
         <div>

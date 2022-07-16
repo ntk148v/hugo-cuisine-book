@@ -1,9 +1,13 @@
 {{ $baseUrl := .Site.BaseURL }} 
 <a class="box" href="{{ .Permalink }}" aria-label="{{ .Title }}">
   <div class="is-flex">
-    {{ with .Params.featured_image }}
+    {{ if .Params.featured_image }}
     <figure class="image is-48x48" style="margin-right: 0.5em;">
-      <img alt="{{ . }}" class="is-rounded" src="{{ $baseUrl }}/{{ . }}" />
+    {{ with .Resources.GetMatch .Params.featured_image }}
+      <img alt="{{ .Name }}" class="is-rounded" src="{{ .RelPermalink }}" />
+    {{ else }}
+      <img alt="{{ .Params.featured_image }}" class="is-rounded" src="{{ .Params.featured_image | relURL }}" />
+    {{ end }}
     </figure>
     {{ end }}
     <div>
