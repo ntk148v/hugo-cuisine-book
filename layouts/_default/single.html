@@ -21,8 +21,9 @@
         <div class="column">
           <h1 class="title is-1">{{ .Title }}</h1>
           <span>
-            {{ $rating := .Params.rating | default 0 }} {{ range $i := (seq
-            $rating) }}
+            {{ $rating := 0 }} {{ if and (isset .Params "rating") (le
+            .Params.rating 5) }} {{ $rating = .Params.rating }} {{ end }} {{
+            range $i := (seq $rating) }}
             <i class="fas fa-star has-text-warning"></i>
             {{ end }} {{ range $i := (seq (sub 5 $rating)) }}
             <i class="fas fa-star"></i>
