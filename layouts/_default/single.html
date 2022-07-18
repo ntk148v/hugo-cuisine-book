@@ -20,6 +20,11 @@
         </div>
         <div class="column">
           <h1 class="title is-1">{{ .Title }}</h1>
+          {{ with .Params.website }}
+          <h6 class="is-6 has-text-link"><a href="{{ . }}">{{ . }}</a></h6>
+          {{ end }} {{ if .Params.description }}
+          <h6 class="subtitle is-6">{{ .Params.description }}</h6>
+          {{ end }}
           <span>
             {{ $rating := 0 }} {{ if and (isset .Params "rating") (le
             .Params.rating 5) }} {{ $rating = .Params.rating }} {{ end }} {{
