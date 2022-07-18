@@ -2,19 +2,32 @@
 <div class="section">
   <article class="container box">
     <header>
-      <div class="is-flex">
-        {{ if .Params.featured_image }}
-        <figure class="image is-96x96" style="margin-right: 0.5em;">
-        {{ with .Resources.GetMatch .Params.featured_image }}
-          <img alt="{{ .Name }}" class="is-rounded" src="{{ .Permalink }}" />
-        {{ else }}
-          <img alt="{{ .Params.featured_image }}" class="is-rounded" src="{{ .Params.featured_image | relURL }}" />
-        {{ end }}
-        </figure>
-        {{ end }}
-        <div>
+      <div class="columns is-flex is-vcentered">
+        <div class="column is-1">
+          {{ if .Params.featured_image }}
+          <figure class="image is-1by1">
+            {{ with .Resources.GetMatch .Params.featured_image }}
+            <img alt="{{ .Name }}" class="is-rounded" src="{{ .Permalink }}" />
+            {{ else }}
+            <img
+              alt="{{ .Params.featured_image }}"
+              class="is-rounded"
+              src="{{ .Params.featured_image | relURL }}"
+            />
+            {{ end }}
+          </figure>
+          {{ end }}
+        </div>
+        <div class="column">
           <h1 class="title is-1">{{ .Title }}</h1>
-          <h6 class="subtitle is-6">{{ .Summary }}</h6>
+          <span>
+            {{ $rating := .Params.rating | default 0 }} {{ range $i := (seq
+            $rating) }}
+            <i class="fas fa-star has-text-warning"></i>
+            {{ end }} {{ range $i := (seq (sub 5 $rating)) }}
+            <i class="fas fa-star"></i>
+            {{ end }}
+          </span>
         </div>
       </div>
       <div style="margin-top: 1em">

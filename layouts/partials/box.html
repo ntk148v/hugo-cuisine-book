@@ -1,23 +1,43 @@
-{{ $baseUrl := .Site.BaseURL }} 
+{{ $baseUrl := .Site.BaseURL }}
 <a class="box" href="{{ .Permalink }}" aria-label="{{ .Title }}">
-  <div class="is-flex">
-    {{ if .Params.featured_image }}
-    <figure class="image is-48x48" style="margin-right: 0.5em;">
-    {{ with .Resources.GetMatch .Params.featured_image }}
-      <img alt="{{ .Name }}" class="is-rounded" src="{{ .RelPermalink }}" />
-    {{ else }}
-      <img alt="{{ .Params.featured_image }}" class="is-rounded" src="{{ .Params.featured_image | relURL }}" />
-    {{ end }}
-    </figure>
-    {{ end }}
-    <div>
+  <div class="columns is-flex is-vcentered">
+    <div class="column is-one-quarter">
+      {{ if .Params.featured_image }}
+      <figure class="is-flex image is-1by1">
+        {{ with .Resources.GetMatch .Params.featured_image }}
+        <img alt="{{ .Name }}" class="is-rounded" src="{{ .RelPermalink }}" />
+        {{ else }}
+        <img
+          alt="{{ .Params.featured_image }}"
+          class="is-rounded"
+          src="{{ .Params.featured_image | relURL }}"
+        />
+        {{ end }}
+      </figure>
+      {{ end }}
+    </div>
+    <div class="column">
       <div>{{ .Title }}</div>
+      <span>
+        {{ $rating := .Params.rating | default 0 }} {{ range $i := (seq $rating)
+        }}
+        <i class="fas fa-star has-text-warning"></i>
+        {{ end }} {{ range $i := (seq (sub 5 $rating)) }}
+        <i class="fas fa-star"></i>
+        {{ end }}
+      </span>
+    </div>
+  </div>
+  <div class="columns is-flex">
+    <div class="column">
       <small class="has-text-grey">{{ .Summary }}</small>
     </div>
   </div>
-  <div style="margin-top: 0.5em;">
-    {{ range .Params.Tags }}
-    <span class="tag is-primary is-light">{{ . }}</span>
-    {{ end }}
+  <div class="columns is-flex">
+    <div class="column">
+      {{ range .Params.Tags }}
+      <span class="tag is-primary is-light">{{ . }}</span>
+      {{ end }}
+    </div>
   </div>
 </a>
