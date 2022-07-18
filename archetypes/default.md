@@ -5,6 +5,7 @@ tags = []
 featured_image = ""
 description = ""
 raing = 5
+comment = true
 +++
 
 ## Location
