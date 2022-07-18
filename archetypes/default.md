@@ -4,7 +4,7 @@ date = {{ .Date }}
 tags = []
 featured_image = ""
 description = ""
-raing = 5
+rating = 5
 comment = true
 +++
 
