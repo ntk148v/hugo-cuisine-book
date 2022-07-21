@@ -3,7 +3,7 @@
   <article class="container box">
     <header>
       <div class="columns is-flex is-vcentered">
-        <div class="column is-1">
+        <div class="column is-2 p-5">
           {{ if .Params.featured_image }}
           <figure class="image is-1by1">
             {{ with .Resources.GetMatch .Params.featured_image }}
@@ -20,10 +20,14 @@
         </div>
         <div class="column">
           <h1 class="title is-1">{{ .Title }}</h1>
-          {{ with .Params.website }}
-          <h6 class="is-6 has-text-link"><a href="{{ . }}">{{ . }}</a></h6>
+          {{ with .GitInfo.AuthorName }}
+          <h5 class="is-5 has-text-info">{{ . }}</h5>
+          {{ end }} {{ with .Params.website }}
+          <h5 class="is-5 has-text-link">
+            <a href="{{ . }}">{{ . }}</a>
+          </h5>
           {{ end }} {{ if .Params.description }}
-          <h6 class="subtitle is-6">{{ .Params.description }}</h6>
+          <h5 class="is-5">{{ .Params.description }}</h5>
           {{ end }}
           <span>
             {{ $rating := 0 }} {{ if and (isset .Params "rating") (le
