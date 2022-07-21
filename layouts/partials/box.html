@@ -18,9 +18,9 @@
     </div>
     <div class="column">
       <div>{{ .Title }}</div>
-      {{ with .GitInfo.AuthorName }}
+      {{ if .GitInfo }} {{ with .GitInfo.AuthorName }}
       <small><p class="has-text-info">{{ . }}</p></small>
-      {{ end }}
+      {{ end }} {{ end }}
       <span>
         {{ $rating := 0 }} {{ if and (isset .Params "rating") (le .Params.rating
         5) }} {{ $rating = .Params.rating }} {{ end }} {{ range $i := (seq

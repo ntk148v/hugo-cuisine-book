@@ -20,9 +20,9 @@
         </div>
         <div class="column">
           <h1 class="title is-1">{{ .Title }}</h1>
-          {{ with .GitInfo.AuthorName }}
+          {{ if .GitInfo }} {{ with .GitInfo.AuthorName }}
           <h5 class="is-5 has-text-info">{{ . }}</h5>
-          {{ end }} {{ with .Params.website }}
+          {{ end }} {{ end }} {{ with .Params.website }}
           <h5 class="is-5 has-text-link">
             <a href="{{ . }}">{{ . }}</a>
           </h5>
