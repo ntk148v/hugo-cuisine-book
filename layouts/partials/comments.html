@@ -1,5 +1,2 @@
-{{- if or (eq .Params.comment true) (and (ne .Params.comment false) (eq site.Params.comment.enable true)) -}}
-<section class="container">
-    <!-- placeholder here -->
-</section>
-{{- end -}}
+<!-- This partial can be replaced to support other commenting engines -->
+{{ template "_internal/disqus.html" . }}

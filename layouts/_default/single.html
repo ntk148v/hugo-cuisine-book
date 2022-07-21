@@ -45,7 +45,9 @@
       </div>
     </header>
     <div class="content" style="margin-top: 1em">{{ .Content }}</div>
-    {{- partial "comments.html" -}}
   </article>
 </div>
-{{ end }}
+{{- if or (eq .Params.comment true) (and (ne .Params.comment false) (eq
+site.Params.comment true)) -}}
+<section class="container">{{- partial "comments.html" . -}}</section>
+{{- end -}} {{ end }}
