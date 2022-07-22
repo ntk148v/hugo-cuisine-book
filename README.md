@@ -1,11 +1,11 @@
 <div align="center">
-	<h1>Hugo Cuisine Book</h1>
-	<blockquote align="center">A simple Hugo theme</blockquote>
-	<p>
-		<a href="https://github.com/ntk148v/hugo-cuisine-book/blob/master/LICENSE">
-			<img alt="GitHub license" src="https://img.shields.io/github/license/ntk148v/hugo-cuisine-book?style=for-the-badge">
-		</a>
-		<a href="https://github.com/ntk148v/hugo-cuisine-book/stargazers">
+ <h1>Hugo Cuisine Book</h1>
+ <blockquote align="center">A simple Hugo theme</blockquote>
+ <p>
+  <a href="https://github.com/ntk148v/hugo-cuisine-book/blob/master/LICENSE">
+   <img alt="GitHub license" src="https://img.shields.io/github/license/ntk148v/hugo-cuisine-book?style=for-the-badge">
+  </a>
+  <a href="https://github.com/ntk148v/hugo-cuisine-book/stargazers">
             <img alt="GitHub stars" src="https://img.shields.io/github/stars/ntk148v/hugo-cuisine-book?style=for-the-badge">
         </a>
         <a href="https://gohugo.io">
@@ -14,16 +14,17 @@
         <a href="https://ntk148v.github.io/mammam">
             <img alt="Demo Site" src="https://img.shields.io/badge/demo-site-green.svg?style=for-the-badge">
         </a>
-	</p><br>
+ </p><br>
     <p>
-        <img src="./screenshot.png">
+        <img src="./images/screenshot.png">
     </p>
 </div>
 
 - [1. Requirements](#1-requirements)
 - [2. Installation](#2-installation)
-	- [2.1. Install as git module](#21-install-as-git-module)
-	- [2.2. Install as hugo module](#22-install-as-hugo-module)
+  - [2.1. Install as git module](#21-install-as-git-module)
+  - [2.2. Install as hugo module](#22-install-as-hugo-module)
+- [3. Contributing](#3-contributing)
 
 Credits:
 
@@ -74,3 +75,11 @@ path = 'github.com/ntk148v/hugo-cuisine-book'
 hugo mod get -u
 hugo server --minify
 ```
+
+## 3. Contributing
+
+- Fork it.
+- Create your feature branch (`git checkout -b my-new-feature`).
+- Commit your changes (`git commit -am 'Add some feature'`).
+- Push to the branch (`git push origin my-new-feature`).
+- Create new Pull Request.
