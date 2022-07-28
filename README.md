@@ -24,7 +24,10 @@
 - [2. Installation](#2-installation)
   - [2.1. Install as git module](#21-install-as-git-module)
   - [2.2. Install as hugo module](#22-install-as-hugo-module)
-- [3. Contributing](#3-contributing)
+- [3. Configuration & Customization](#3-configuration--customization)
+  - [3.1. Site configuration](#31-site-configuration)
+  - [3.2. Customization](#32-customization)
+- [4. Contributing](#4-contributing)
 
 Credits:
 
@@ -76,7 +79,56 @@ hugo mod get -u
 hugo server --minify
 ```
 
-## 3. Contributing
+## 3. Configuration & Customization
+
+### 3.1. Site configuration
+
+- There are a few configuration options that you can add to your `config.toml` file.
+
+```toml
+# Your base url
+baseURL = "http://localhost/my-title"
+# Your page title
+title = "my-title"
+theme = "cuisine-book"
+# (Optional) Set this to true to enable Author.
+enableGitInfo = true
+
+[params]
+  author = "Your Name"
+  description = "Describe about you"
+  # (Optional) Your logo in the header navbar which has to be stored in static folder.
+  # If the logo is /static/logo.png then the path would be 'logo.png'
+  logo = "logo.png"
+  # (Optional) Enable comments template on pages
+  # By default partials/comments.html includes Disqus template
+  # See https://gohugo.io/content-management/comments/#configure-disqus
+  # Can be overwritten by same param in page frontmatter
+  comment = true
+```
+
+### 3.2. Customization
+
+- Extra customization:
+
+| File                             | Description                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------- |
+| `static/favicon.png`             | Override default favicon                                                              |
+| `assets/_custom.scss`            | Customize or override scss styles                                                     |
+| `assets/_fonts.scss`             | Replace default font with custom fonts (e.g. local files or remote like google fonts) |
+| `layouts/partials/comments.html` | Override comments.html template                                                       |
+
+- For example, you want to change default site's background.
+  - Add new background to `static/`, named it as `background.png`.
+  - Add `assets/_custom.scss`
+
+```scss
+body {
+  background-image: url("background.png");
+}
+```
+
+## 4. Contributing
 
 - Fork it.
 - Create your feature branch (`git checkout -b my-new-feature`).
