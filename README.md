@@ -51,7 +51,7 @@ git submodule add https://github.com/ntk148v/hugo-cuisine-book themes/cuisine-bo
 - Run hugo (or set theme = "cuisine-book"/theme: hugo-book in configuration file)
 
 ```bash
-hugo server --minify --themecuisine-book
+hugo server --minify --theme cuisine-book
 ```
 
 ### 2.2. Install as hugo module
