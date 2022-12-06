@@ -49,6 +49,18 @@
       </div>
     </header>
     <div class="content" style="margin-top: 1em">{{ .Content }}</div>
+{{ if and .Site.Params.repo .Site.Params.newpath }}
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column is-narrow">
+        <a href="{{ .Site.Params.repo }}/{{ .Site.Params.editpath }}/{{ .Site.Params.contentDir | default "content" }}/{{ replace .File.Path "\\" "/" }}">
+          <button class="button">
+            <span class="icon is-small"><i class="fa fa-pen"></i></span>
+          </button>
+        </a>
+      </div>
+    </div>
+{{ end }}
   </article>
 </div>
 {{- if or (eq .Params.comment true) (and (ne .Params.comment false) (eq

@@ -17,7 +17,7 @@
       </div>
 {{ if and .Site.Params.repo .Site.Params.newpath }}
       <div class="column is-narrow">
-        <a href="{{ .Site.Params.repo }}/{{ .Site.Params.newpath }}/{{ .Site.Params.contentDir | default "content" }}/{{ replace .File.Path "\\" "/" }}">
+        <a href="{{ .Site.Params.repo }}/{{ .Site.Params.newpath }}/{{ .Site.Params.contentDir | default "content" }}">
           <button class="button">
             <span class="icon is-small"><i class="fa fa-plus"></i></span>
           </button>
