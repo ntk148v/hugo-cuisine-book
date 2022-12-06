@@ -24,7 +24,7 @@
 - [2. Installation](#2-installation)
   - [2.1. Install as git module](#21-install-as-git-module)
   - [2.2. Install as hugo module](#22-install-as-hugo-module)
-- [3. Configuration & Customization](#3-configuration--customization)
+- [3. Configuration \& Customization](#3-configuration--customization)
   - [3.1. Site configuration](#31-site-configuration)
   - [3.2. Customization](#32-customization)
 - [4. Contributing](#4-contributing)
@@ -105,6 +105,16 @@ enableGitInfo = true
   # See https://gohugo.io/content-management/comments/#configure-disqus
   # Can be overwritten by same param in page frontmatter
   comment = true
+  # Set source repository location.
+  repo = 'https://github.com/ntk148v/mammam'
+  # Enable 'Edit' links.
+  # Disabled by default. Uncomment to enable. Requires 'repo' param.
+  # Path must point to the site directory.
+  editpath = 'edit/master'
+  # Enable 'Add' links.
+  # Disabled by default. Uncomment to enable. Requires 'repo' param.
+  # Path must point to the site directory.
+  newpath = 'new/master'
 ```
 
 ### 3.2. Customization

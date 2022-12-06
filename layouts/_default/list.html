@@ -24,6 +24,17 @@
         partial "box.html" $page }}{{ end }} {{ end }}
       </div>
     </div>
+{{ if and .Site.Params.repo .Site.Params.newpath }}
+    <div class="columns">
+      <div class="column is-narrow">
+        <a href="{{ .Site.Params.repo }}/{{ .Site.Params.newpath }}/{{ .Site.Params.contentDir | default "content" }}/{{ replace .File.Path "\\" "/" }}">
+          <button class="button">
+            <span class="icon is-small"><i class="fa fa-pen"></i></span>
+          </button>
+        </a>
+      </div>
+    </div>
+{{ end }}
   </div>
 </section>
 {{ end }}
