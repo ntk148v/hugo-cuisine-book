@@ -1,16 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-
-@font-face {
-	font-family: 'Iosevka Web';
-	font-display: swap;
-	font-weight: 500;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('https://ntk148v.github.io/iosevkawebfont/latest/woff2/iosevka-medium.woff2') format('woff2');
-}
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 body {
-  font-family: "Amatic SC", cursive;
+  font-family: "Itim", cursive;
   font-size: larger;
 }
 
@@ -19,6 +10,6 @@ body {
 }
 
 .tag {
-  font-family: "Iosevka Web", monospace;
+  font-family: "Itim", cursive;
   font-size: medium;
 }
