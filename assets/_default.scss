@@ -19,6 +19,11 @@ body {
   justify-content: center;
 }
 
+.dropdown-wrapper {
+  position: absolute;
+  z-index: 9999;
+}
+
 footer {
   padding: 1rem 1rem 1rem !important;
   background-color: transparent;
