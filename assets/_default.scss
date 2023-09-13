@@ -5,8 +5,8 @@ body {
   flex-direction: column;
   background-image: url("36129.webp");
   background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-size: contain;
 }
 
 .main {
