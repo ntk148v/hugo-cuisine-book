@@ -25,27 +25,31 @@
 {{ end }}
     </div>
 
+    {{- $paginator := .Paginate .Site.RegularPages }}
     <div class="columns is-centered">
       <div class="column">
-        {{ range $index, $page := .Site.RegularPages }}
+        {{ range $index, $page := $paginator.Pages }}
           {{ if eq (mod $index 4) 0 }}{{ partial "box.html" $page }}{{ end }}
         {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Site.RegularPages }}
+        {{ range $index, $page := $paginator.Pages }}
           {{ if eq (mod $index 4) 1 }}{{ partial "box.html" $page }}{{ end }}
         {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Site.RegularPages }}
+        {{ range $index, $page := $paginator.Pages }}
           {{ if eq (mod $index 4) 2 }}{{ partial "box.html" $page }}{{ end }}
         {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Site.RegularPages }}
+        {{ range $index, $page := $paginator.Pages }}
           {{ if eq (mod $index 4) 3 }}{{ partial "box.html" $page }}{{ end }}
         {{ end }}
       </div>
+    </div>
+    <div class="column is-centered">
+      {{ template "_internal/pagination.html" . }}
     </div>
   </div>
 </section>

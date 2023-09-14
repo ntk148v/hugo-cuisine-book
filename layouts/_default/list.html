@@ -3,26 +3,32 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-half">
-        <h3 class="title">{{ humanize .Page.Title }}</h3>
+        <div class="column has-text-centered tagtitle">
+          <h3>{{ humanize .Page.Title }}</h3>
+        </div>
       </div>
     </div>
+    {{- $paginator := .Paginate .Pages }}
     <div class="columns is-centered">
       <div class="column">
-        {{ range $index, $page := .Pages }} {{ if eq (mod $index 4) 0 }}{{
-        partial "box.html" $page }}{{ end }} {{ end }}
+        {{ range $index, $page := $paginator.Pages }} {{ if eq (mod $index 4) 0
+        }}{{ partial "box.html" $page }}{{ end }} {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Pages }} {{ if eq (mod $index 4) 1 }}{{
-        partial "box.html" $page }}{{ end }} {{ end }}
+        {{ range $index, $page := $paginator.Pages }} {{ if eq (mod $index 4) 1
+        }}{{ partial "box.html" $page }}{{ end }} {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Pages }} {{ if eq (mod $index 4) 2 }}{{
-        partial "box.html" $page }}{{ end }} {{ end }}
+        {{ range $index, $page := $paginator.Pages }} {{ if eq (mod $index 4) 2
+        }}{{ partial "box.html" $page }}{{ end }} {{ end }}
       </div>
       <div class="column">
-        {{ range $index, $page := .Pages }} {{ if eq (mod $index 4) 3 }}{{
-        partial "box.html" $page }}{{ end }} {{ end }}
+        {{ range $index, $page := $paginator.Pages }} {{ if eq (mod $index 4) 3
+        }}{{ partial "box.html" $page }}{{ end }} {{ end }}
       </div>
+    </div>
+    <div class="column is-centered">
+      {{ template "_internal/pagination.html" . }}
     </div>
   </div>
 </section>
