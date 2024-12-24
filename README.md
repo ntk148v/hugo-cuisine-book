@@ -36,7 +36,7 @@ Credits:
 
 ## 1. Requirements
 
-- Hugo extended version.
+- Hugo extended version, version >= 0.128.0.
 
 ## 2. Installation
 
@@ -134,7 +134,7 @@ enableGitInfo = true
 
 ```scss
 body {
-  background-image: url("background.png");
+  background-image: url('background.png');
 }
 ```
 
