@@ -1,0 +1,5 @@
+# Hugo default
+public
+resources
+.hugo_build.lock
+themes/
