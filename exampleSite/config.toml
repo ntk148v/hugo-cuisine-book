@@ -1,0 +1,12 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Cuisine Book Example"
+theme = "hugo-cuisine-book"
+
+[params]
+  author = "Your Name"
+  description = "A simple Hugo theme"
+  repo = "https://github.com/ntk148v/hugo-cuisine-book"
+  editpath = "edit/master"
+  newpath = "new/master"
+  comment = true
