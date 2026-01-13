@@ -3,7 +3,7 @@ body {
   // use this if navbar is fixed
   min-height: calc(100vh - 52px);
   flex-direction: column;
-  background-image: url("36129.webp");
+  background-image: url($body-background-image);
   background-position: center center;
   background-repeat: repeat-y;
   background-size: cover;
@@ -36,24 +36,24 @@ ul.pagination {
 
   .page-item a {
     background-color: hsl(0, 0%, 100%);
-    color: #00947e;
+    color: $primary-color;
     padding: 8px 16px;
     text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #00947e;
+    transition: background-color 0.3s;
+    border: 1px solid $primary-color;
     margin: 0 4px;
     border-radius: 5px;
   }
 
   .active a {
-    background-color: #ebfffc;
-    color: #00947e;
-    border: 1px solid #00947e;
+    background-color: $light-primary-color;
+    color: $primary-color;
+    border: 1px solid $primary-color;
   }
 }
 
 .tagtitle {
-  background-color: #ebfffc;
-  color: #00947e;
-  border: 1px solid #00947e;
+  background-color: $light-primary-color;
+  color: $primary-color;
+  border: 1px solid $primary-color;
 }

@@ -1,3 +1,7 @@
+$body-background-image: "{{ .Site.Params.style.backgroundImage | default "36129.webp" }}";
+$primary-color: {{ .Site.Params.style.primaryColor | default "#00947e" }};
+$light-primary-color: {{ .Site.Params.style.lightPrimaryColor | default "#ebfffc" }};
+
 @import "default";
 @import "fonts";
 
