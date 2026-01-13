@@ -1,14 +1,18 @@
 <footer class="footer is-fixed-bottom">
   <div class="content has-text-centered">
     <p>
-      <a href="https://github.com/ntk148v/hugo-cuisine-book"><strong>Hugo Cuisine Book</strong></a> by
-      <a href="https://ntk148v.github.io">Kien Nguyen Tuan</a>. The source
+      {{ if .Site.Copyright }} {{ .Site.Copyright | safeHTML }} {{ else }} {{
+      with .Site.Params.copyright }} {{ . | safeHTML }} {{ else }}
+      <a href="https://github.com/ntk148v/hugo-cuisine-book"
+        ><strong>Hugo Cuisine Book</strong></a
+      >
+      by <a href="https://ntk148v.github.io">Kien Nguyen Tuan</a>. The source
       code is licensed
       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
       website content is licensed
       <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
         >CC BY NC SA 4.0</a
-      >.
+      >. {{ end }} {{ end }}
     </p>
   </div>
 </footer>
