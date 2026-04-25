@@ -1,6 +1,18 @@
 {{ define "main" }}
 <section class="section">
   <div class="container">
+    {{- with .Content }}
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="content">
+          {{ . }}
+        </div>
+      </div>
+    </div>
+    {{- end }}
+    <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+      <a href="/posts/" class="button is-primary">Browse All Recipes</a>
+    </div>
     <div class="columns is-centered">
       <div class="column">
         {{- partial "search.html" . -}}

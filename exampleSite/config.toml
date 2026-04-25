@@ -2,6 +2,8 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Cuisine Book Example"
 theme = "hugo-cuisine-book"
+themesDir = "../.."
+enableGitInfo = true
 
 [params]
   author = "Your Name"
